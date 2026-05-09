@@ -1025,10 +1025,120 @@ const MODULES = [
     brandSuffix: "· Nova Sales",
     intro: {
       eyebrow: "Live demo · presenter view",
-      headline: 'Nova Sales<em>.</em><br/>The pipeline &amp; revenue tour.',
-      lede: "Module content coming soon. Drop the steps into the `demo` array below to bring this tab to life."
+      headline: 'Nova Sales<em>.</em><br/>The pipeline &amp; revenue intelligence tour.',
+      lede: "Eight stops. Roughly 12–16 minutes. 111 leads, ₹4.3 Cr in pipeline, AI-scored end-to-end. Headline moments: the Q&A Prep tab on a lead drawer (step 2), the velocity formula card (step 5), and the AI assistant — but only with the one scripted question that returns clean data."
     },
-    demo: []
+    demo: [
+      {
+        title: "Dashboard",
+        navigate: "/sales/dashboard",
+        show: [
+          "<strong>5 KPI cards:</strong> Total Leads <strong>111</strong> · Qualified Leads <strong>38</strong> · Conversion Rate <strong>56%</strong> · Pipeline Value <strong>4.3Cr</strong> (Won: <strong>12.0L</strong>) · Avg Response Time <strong>42.3h</strong>.",
+          "<strong>Conversion Drop-off Funnel:</strong> All Leads 111 (100%) → Contacted 90 (81%) → Qualified 52 (47%) → Proposal 18 (16%) → Negotiation 16 (14%) → Won 14 (13%).",
+          "<strong>Pipeline Value by Stage</strong> bar chart — Qualified stage holds the largest slice, extending past <strong>1.8Cr</strong>.",
+          "<strong>Lead Sources</strong> donut: Website <strong>38</strong> · LinkedIn <strong>15</strong> · Referral <strong>14</strong> · Trade Show <strong>12</strong> · Google Ads <strong>12</strong> · Cold Call <strong>11</strong> · Facebook <strong>9</strong>.",
+          "<strong>Deal Win Rate by Lead Source:</strong> Referral <strong>100%</strong> (3W/0L) · LinkedIn <strong>75%</strong> · Trade Show <strong>67%</strong> · Website <strong>57%</strong> · Facebook <strong>0%</strong>.",
+          "<strong>Top Deals table:</strong> Amazon / William LLP <strong>Rs. 50.0L</strong> (Qualified) · SmartFactory <strong>Rs. 28.0L</strong> (Proposal) · NexWave Technologies <strong>Rs. 20.0L</strong> (Qualified)."
+        ],
+        say: "The Sales Dashboard is your single pane of glass for the entire pipeline. At a glance you can see we have one hundred and eleven leads in the system, thirty-eight of them qualified, with a conversion rate of fifty-six percent — well above industry average. The pipeline is sitting at four point three crore rupees total, and the funnel chart makes it immediately clear where drop-off happens: we get to Proposal with only sixteen percent of leads, so that Qualified-to-Proposal handoff is the key bottleneck to tighten. The win-rate chart at the bottom is a standout story — Referral closes at a perfect hundred percent across fourteen deals, which is a powerful message for the team.",
+        tip: "WOW MOMENT: Pause on the Deal Win Rate by Lead Source chart — the 100% Referral bar next to the 0% Facebook bar tells a story in two seconds. Scroll slowly so the audience has time to read it."
+      },
+      {
+        title: "Leads",
+        navigate: "/sales/leads",
+        show: [
+          "<strong>111 leads</strong> in a sortable table — columns: Lead name, Company, Source, Status, AI Score bar, Value, Assigned rep.",
+          "Filter dropdowns for <strong>7 statuses</strong> (New / Contacted / Qualified / Proposal / Negotiation / Won / Lost) and <strong>7 sources</strong> (Website / Facebook / LinkedIn / Referral / Cold Call / Trade Show / Google Ads).",
+          "Score bar is colour-coded: green = high (e.g. <strong>Venkatesh Iyer 94</strong>, <strong>Yamini Chauhan 94</strong>), red = low (e.g. <strong>Siddharth Garg 20</strong>).",
+          "Click any row opens a <strong>right-panel detail drawer</strong> showing Relevancy score <strong>85</strong>, Conversion score <strong>23</strong>, Est. Value, contact info, and Score Breakdown (Company Fit · Budget Match · Urgency · Engagement · Decision Auth.).",
+          "Panel has <strong>5 sub-tabs:</strong> Details · AI Insights · Q&A Prep · Timeline · Notes.",
+          "<strong>AI Insights sub-tab</strong> shows Closing Strategy steps (e.g. 'Emphasize cost savings over 3-year period') and Conversion Probability gauge; <strong>Q&A Prep sub-tab</strong> shows AI-predicted buyer questions with suggested answers."
+        ],
+        say: "Lead Management is where all one hundred and eleven active leads live. The table is filterable by status and source in one click, and every row shows an AI score bar so your reps know at a glance who to call first. When you open a lead — let's look at Rajesh Kumar at TechFlow Solutions — you get a full panel with a relevancy score of eighty-five, a conversion probability of twenty-three percent, and a five-tab breakdown that includes AI-generated closing strategies and predicted Q&A pairs your rep can walk into the meeting armed with. That Q&A Prep tab is the kind of thing reps used to spend hours researching manually.",
+        tip: "WOW MOMENT: Click the Q&A Prep tab in the drawer — the AI-generated buyer questions and answers is the most conversation-stopping feature in the whole module. Keep the drawer open as you talk."
+      },
+      {
+        title: "Pipeline",
+        navigate: "/sales/pipeline",
+        show: [
+          "<strong>4 summary metrics:</strong> Pipeline Value <strong>4.3Cr</strong> · Won Revenue <strong>3.2Cr</strong> · Active Deals <strong>86</strong> · Avg. Score <strong>36</strong>.",
+          "<strong>Kanban board</strong> with 7 columns: New <strong>21</strong> deals / <strong>1.1Cr</strong> · Contacted <strong>27</strong> / <strong>87.0L</strong> · Qualified <strong>34</strong> / <strong>1.6Cr</strong> · Proposal <strong>2</strong> / <strong>—</strong> · Negotiation <strong>2</strong> / <strong>25.0L</strong> · Won <strong>14</strong> / <strong>3.2Cr</strong>.",
+          "Each card shows deal name, company, estimated value (e.g. <strong>Rs. 7.5L</strong>), AI score badge (e.g. <strong>85</strong> in green), assigned rep, and win probability (e.g. <strong>23%</strong>).",
+          "Cards are <strong>drag-and-drop</strong> between stages — subtitle reads 'Drag and drop leads between stages to update their status'.",
+          "Highest-value active card: <strong>Amazon / William LLP at Rs. 50.0L</strong> in Qualified; largest negotiation deal: <strong>Arjun Rao / NexaTech Rs. 14.0L</strong>.",
+          "Won column contains <strong>14 deals</strong> including <strong>Nitin Deshpande / Heavy Equipment Ltd Rs. 50.0L</strong> and <strong>Rahul Agarwal / Premium Retail Group Rs. 40.0L</strong>."
+        ],
+        say: "The Pipeline gives your sales manager a real-time Kanban view of every active deal. You can see eighty-six open deals laid across seven stages, with four point three crore rupees in total pipeline value and three point two crore already won. The cards are drag-and-drop — a rep on a call can move a deal from Qualified to Proposal in two seconds without leaving this screen. What's worth flagging is that the Proposal column has only two deals today, which matches the funnel drop-off we saw on the dashboard and signals exactly where the team needs to push harder.",
+        tip: "WOW MOMENT: Scroll right to reveal the Negotiation and Won columns side by side — the jump from 2 Negotiation deals to 14 Won deals tells the audience the team is very good at closing once they get there. AVOID: Do not attempt a live drag-and-drop in front of an audience — browser latency can make it look broken."
+      },
+      {
+        title: "AI Insights",
+        navigate: "/sales/insights",
+        show: [
+          "<strong>Priority triage:</strong> <strong>14 High Priority</strong> leads · <strong>20 Medium Priority</strong> · <strong>52 Low Priority</strong> — searchable list sorted by score.",
+          "Top-scored leads: <strong>Venkatesh Iyer</strong> (Dravida Textiles, Score <strong>94</strong>, Conv. <strong>23%</strong>, Rs. 1.0L) · <strong>Siddharth Reddy</strong> (Apex Mining, Score <strong>94</strong>, Conv. <strong>66%</strong>, Rs. 1.0L) · <strong>Yamini Chauhan</strong> (GreenPower Solar, Score <strong>94</strong>, Conv. <strong>55%</strong>, Rs. 15.0L).",
+          "Clicking a lead row <strong>expands inline</strong> — shows Relevancy Breakdown (Company Fit · Budget Match · Urgency · Engagement · Decision Auth.) as colour-coded bars with scores.",
+          "Expanded view also shows <strong>Probable Q&A</strong> panel on the right: e.g. 'Q: What is your current solution? A: Using spreadsheets and manual processes'.",
+          "<strong>Closing Strategy</strong> shown per lead — e.g. 1) Emphasize cost savings over 3-year period  2) Provide references from existing clients in same vertical  3) Offer flexible payment terms.",
+          "Page loads with a <strong>'Loading insights...'</strong> spinner (~2–3 sec delay) — plan for this in demo timing."
+        ],
+        say: "AI Insights is the engine room of the module. The system has automatically ranked all eighty-six active leads into three priority buckets — fourteen are high priority right now. The top three all score ninety-four, but notice Yamini Chauhan at GreenPower Solar: she has a fifty-five percent conversion probability on a fifteen lakh deal, making her the highest-expected-value lead in the high-priority list. Every lead expands to show exactly why it's scored the way it is, with specific closing tactics and the questions the buyer is likely to ask — so your reps walk into every meeting prepared, not guessing.",
+        tip: "WOW MOMENT: Expand Yamini Chauhan's row and point to both the score breakdown bars AND the Probable Q&A column side by side — it reads like a personalised sales brief. Note the 2-3 second load delay when landing on this page; navigate here before you start talking about it."
+      },
+      {
+        title: "Analytics",
+        navigate: "/sales/analytics",
+        show: [
+          "<strong>4 headline KPIs:</strong> Sales Velocity <strong>Rs. 5.3L/day</strong> · Avg Cycle Length <strong>45 days</strong> · Win Rate <strong>56%</strong> · Active Deals <strong>86</strong> (Avg size Rs. 5.0L).",
+          "<strong>Deal Aging by Stage</strong> bar chart — Negotiation stage has the longest average age (~20 days), followed by Qualified (~12 days).",
+          "<strong>Pipeline Stage Flow</strong> sankey-style table: New → Contacted <strong>7 leads</strong> · Contacted → Qualified <strong>5 leads</strong> · Contacted → Lost <strong>1 lead</strong> · Qualified → Proposal <strong>3 leads</strong> · Proposal → Negotiation <strong>2 leads</strong> · Negotiation → Won <strong>1 lead</strong>.",
+          "<strong>Conversion Probability vs Deal Value</strong> scatter plot — dots colour-coded Score 80+ (green), Score 60–79 (yellow), Score &lt;60 (red); high-value deals cluster at the top-left (high value, lower probability).",
+          "<strong>Pipeline Velocity Breakdown</strong> formula card: 86 Deals × Rs. 5.0L Avg Deal Size × 56% Win Rate ÷ 45 days = <strong>Rs. 5.3L/day</strong>.",
+          "Page heading: <strong>'Pipeline Analytics — Pipeline health, deal flow analysis, and bottleneck identification'</strong>."
+        ],
+        say: "Pipeline Analytics turns the pipeline into a health report. The headline number is sales velocity — the team is generating five point three lakh rupees of expected revenue every single day. The Deal Aging chart is where managers will spend most of their time: deals sitting in Negotiation for over twenty days are stalling, and this chart makes that visible before a deal goes cold. The stage-flow table shows the exact number of leads moving between each stage, so you can pinpoint precisely where the funnel is leaking. The scatter plot in the middle is pure gold for account prioritisation — you want to be calling the large green dots first.",
+        tip: "Pause on the Pipeline Velocity Breakdown card at the bottom — it shows the maths in plain sight (86 × 5.0L × 56% ÷ 45 days = 5.3L/day). Audiences love seeing the formula. WOW MOMENT: Point to the formula card and say 'your sales machine in one equation'."
+      },
+      {
+        title: "Team Performance",
+        navigate: "/sales/team-performance",
+        show: [
+          "<strong>4 top-line stats:</strong> Top Performer <strong>Unassigned</strong> · Total Revenue <strong>Rs. 3.2Cr</strong> · Total Deals Won <strong>14</strong> · Avg Conversion Rate <strong>51%</strong>.",
+          "<strong>Revenue Leaderboard</strong> horizontal bar chart — Unassigned leads (~2.2Cr), Mohammed (~55L), Hasshya (~45L), Prasad (~40L).",
+          "<strong>Activity Breakdown</strong> stacked bar (Calls / Emails / Meetings) per rep — Mohammed: 9 calls, 15 emails, 6 meetings; Hasshya: 174 calls, 290 emails, 1 meeting.",
+          "<strong>Detailed Performance table</strong> with 6 reps: Unassigned <strong>9 Won</strong> / Rs. 2.1Cr / <strong>53%</strong> conv. / Rs. 98.5L pipeline / <strong>3.2h</strong> resp.; Mohammed <strong>2 Won</strong> / Rs. 72.0L / <strong>100%</strong> conv.; Hasshya <strong>2 Won</strong> / Rs. 20.5L / <strong>50%</strong> conv. / Rs. 2.5Cr pipeline.",
+          "Columns: Rep · Won · Revenue · Conv. Rate · Pipeline · Resp. Time · Activities (calls / emails / meetings counts).",
+          "Note: <strong>'Unassigned'</strong> appears as top performer — indicates a large portion of leads have not yet been assigned to a rep."
+        ],
+        say: "Team Performance gives sales leadership a live leaderboard. The most important thing to flag here is that nine of the fourteen won deals are sitting under 'Unassigned' — that's revenue the team closed without a clear owner in the system, which is a data hygiene opportunity as much as anything. Among named reps, Mohammed has a perfect hundred percent conversion rate on two deals, and Hasshya is managing the largest active pipeline at two point five crore rupees. The activity breakdown chart on the right shows who's actually doing the work — Hasshya is running two hundred and ninety emails to just one meeting, which might be worth a coaching conversation.",
+        tip: "Be transparent about the 'Unassigned' top-performer anomaly — don't skip past it. Acknowledge it as a lead assignment workflow gap, which actually demonstrates the system's value: you can see the problem clearly now. AVOID: Don't linger on the individual rep revenue numbers if clients in the room might recognise the names."
+      },
+      {
+        title: "Forecast",
+        navigate: "/sales/forecast",
+        show: [
+          "<strong>4 KPI cards:</strong> Total Forecast <strong>Rs. 1.9Cr</strong> · Target <strong>Rs. 1.4Cr</strong> · Weighted Pipeline <strong>Rs. 1.4Cr</strong> · Status <strong>'On Track'</strong> (in green).",
+          "<strong>Revenue Forecast vs Target</strong> line chart (Dec 2025 – May 2026) — three lines: Target (dotted yellow), Forecast (blue), Actual (green); Actual line climbing steeply from Mar 2026 onwards.",
+          "<strong>Weighted Pipeline Forecast table</strong> — each lead shows Stage, Deal Value, Stage Probability %, and Weighted Value; probability tiers: New 10% · Contacted 20% · Qualified 40% · Proposal 60% · Negotiation 80%.",
+          "Highest weighted deals: <strong>Kavita Desai / SmartFactory</strong> Proposal Rs. 28.0L → weighted <strong>Rs. 16.8L</strong>; <strong>Arjun Rao / NexaTech</strong> Negotiation Rs. 14.0L → weighted <strong>Rs. 11.2L</strong>; <strong>Anjali Saxena / EduTech Academy</strong> Negotiation Rs. 11.0L → weighted <strong>Rs. 8.8L</strong>.",
+          "<strong>Win / Loss Analysis</strong> donut chart: <strong>Won 56%</strong> vs Lost 44% across 25 closed deals.",
+          "Total forecast of Rs. 1.9Cr exceeds target of Rs. 1.4Cr — system auto-flags <strong>'On Track'</strong>."
+        ],
+        say: "Revenue Forecast takes the pipeline and turns it into a financial projection. The system multiplies every deal's value by its stage probability — so a Negotiation deal at fourteen lakh is worth eleven point two lakh in the forecast, not the full fourteen. That gives you a weighted pipeline of one point four crore rupees, which just happens to match the target exactly. With the total forecast at one point nine crore, the system is calling it 'On Track' — and the three-line chart shows you the trajectory visually. The Win-Loss donut showing fifty-six percent wins across twenty-five closed deals gives you a solid base rate to defend that forecast with confidence.",
+        tip: "WOW MOMENT: Hover on the 'On Track' badge — the green colour against the orange total-forecast number is a clean, confident visual. Point to the weighted value column in the table and explain the maths in one sentence: 'Proposal stage deals get 60 cents of every rupee, Negotiation gets 80.' That instantly earns credibility with a CFO in the room."
+      },
+      {
+        title: "Nova AI Assistant",
+        navigate: "Orange chat button, bottom-right corner of any page",
+        show: [
+          "Free-text chat input — typing a specific, named query gives the cleanest results.",
+          "<strong>Response latency ~5–10 seconds</strong> per question.",
+          "<strong>Live demo question that returns clean data:</strong> <strong>'Who are the top 5 leads by relevancy score?'</strong> → returns a ranked list with contact emails: <strong>Rahul Saxena (93)</strong> · <strong>Shruti Pandey (89)</strong> · <strong>Rajesh Kumar (85)</strong> · <strong>Amit Patel (85)</strong> · <strong>Ananya Iyer (84)</strong>."
+        ],
+        say: "Nova AI is the orange chat button in the bottom-right corner — it's a conversational assistant trained on your live sales data. The sweet spot is specific, named queries: ask it 'Who are the top five leads by relevancy score?' and it comes back in seconds with a ranked list complete with contact details. That's the kind of answer that used to take a rep ten minutes of filtering. The AI shines when the question is concrete and tied to lead-level data.",
+        tip: "Type the exact question — 'Who are the top 5 leads by relevancy score?' — manually. That's the one query confirmed to return clean, accurate data on stage. Don't improvise other questions live."
+      }
+    ]
   }
 ];
 
