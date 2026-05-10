@@ -669,14 +669,106 @@ const MODULES = [
   {
     id: "finance",
     label: "Finance",
-    accent: { base: "#3B82F6", soft: "rgba(59,130,246,0.14)", border: "rgba(59,130,246,0.40)", lightSoft: "rgba(59,130,246,0.10)" },
+    accent: { base: "#EAB308", soft: "rgba(234,179,8,0.16)", border: "rgba(234,179,8,0.40)", lightSoft: "rgba(234,179,8,0.12)" },
     brandSuffix: "· Nova Finance",
     intro: {
       eyebrow: "Live demo · presenter view",
-      headline: 'Nova Finance<em>.</em><br/>The accounting &amp; reporting tour.',
-      lede: "Module content coming soon. Drop the steps into the `demo` array below to bring this tab to life."
+      headline: 'Nova Finance<em>.</em><br/>The financial command centre tour.',
+      lede: "Seven stops. Roughly 10–14 minutes. Killer moments: the cash-flow V-curve on the Dashboard (step 1) and the General Ledger's 500-entry balanced report (step 3). <strong>Critical setup before you start:</strong> set Company to 'Pixeldust India Operations' and Period to 'FY 2025-26' — every other combination is empty. Nova AI is non-functional in the current environment, so the AI pages (steps 2 and 7) are described, not demonstrated."
     },
-    demo: []
+    demo: [
+      {
+        title: "Dashboard",
+        navigate: "/finance/dashboard — set company to Pixeldust India Operations, period FY 2025-26",
+        show: [
+          "<strong>Critical demo settings:</strong> Company = <strong>Pixeldust India Operations</strong> · Period = <strong>FY 2025-26</strong> — all other company/year combos return empty dashboards.",
+          "<strong>5 KPI cards:</strong> Total Revenue <strong>₹0</strong> · Net Profit <strong>₹18</strong> · Total Expenses <strong>₹18</strong> · Cash Balance <strong>-₹10.08 Cr</strong> · Receivables <strong>—</strong>.",
+          "<strong>P&L Summary</strong> panel: Total Income <strong>₹0</strong> · Indirect Expenses <strong>-₹18</strong> · Net Profit <strong>₹18</strong> (rounding artefact).",
+          "<strong>Cash Flow chart</strong> (Net Change in Cash, Monthly): dramatic V-shaped dip reaching <strong>-8.0Cr</strong> around Dec 2025–Feb 2026, then recovering — spans Jun 2025 to Mar 2026.",
+          "<strong>Receivables vs Payables</strong> bar chart: AR = <strong>—</strong> · AP = <strong>₹2.64L</strong> entirely in the 91–120 day ageing bucket — every payable is overdue.",
+          "<strong>Recent Transactions</strong> (all 5 Feb 2026): ACC-PINV-2026-02433 Stonebridge Office Mart <strong>-₹90,514</strong> · 02432 Prime Facility Maintenance <strong>-₹1.66L</strong> · 02431 Apex Aluminium Suppliers <strong>-₹3.43L</strong>."
+        ],
+        say: "The Finance Dashboard is the command centre for Pixeldust India Operations across the full financial year twenty twenty-five to twenty twenty-six. The headline number that jumps out is a cash balance of negative ten point zero eight crore rupees — and the cash flow chart makes the story vivid: cash dropped sharply between October and February, hitting a trough of minus eight crore, before beginning a recovery. Scroll down and the Receivables versus Payables chart tells you something equally important: all two lakh sixty-four thousand rupees of outstanding vendor bills are overdue by ninety to a hundred and twenty days — that is a real operational signal, not a placeholder. The recent transactions panel shows the six most recent purchase invoices so a finance manager can see exactly what's been posted without running a report.",
+        tip: "CRITICAL SETUP: Before demo, set company to 'Pixeldust India Operations' and year to 'FY 2025-26'. Every other combination shows blank dashboards. WOW MOMENT: Point to the Cash Flow chart's deep V-shape and say 'this is the kind of early warning a monthly PDF report would never catch in time.' Don't linger on the Revenue = ₹0 or Net Profit = ₹18 rounding quirk — acknowledge as data entry characteristic and move on."
+      },
+      {
+        title: "Visualizer",
+        navigate: "/finance/visualizer — Nova AI panel opens automatically alongside the canvas",
+        show: [
+          "<strong>Split-screen layout:</strong> left canvas labelled <strong>'Your insights will appear here'</strong>; right panel is the Nova AI chat.",
+          "Greeting on right: <strong>'Hi! I'm Nova AI — I can help you analyze financial data, trends, and insights.'</strong>",
+          "Canvas is designed to <strong>render live charts</strong> from AI responses — when working, insights appear as interactive visualisations on the left.",
+          "<strong>AI engine non-functional in current environment</strong> — do not trigger any prebuilt button or typed query during the demo."
+        ],
+        say: "The Visualizer is the most aspirational page in the Finance module — the idea is that you ask Nova AI a financial question in the chat panel on the right, and a live chart renders on the canvas on the left. The page itself is beautifully designed: a working canvas paired with a context-aware chat assistant. In a fully functional demo this is where you would ask for cash flow by month or a quarterly P&L summary and watch a chart appear in real time. Today the AI engine is returning errors for every query, so treat this page as a showcase of the interface concept rather than a live demonstration.",
+        tip: "DO NOT click anything on this page — every prebuilt button and typed query returns an error. Describe the intended flow verbally, gesture at the canvas placeholder, then pivot to the Reports page for real financial data. Acknowledge the empty canvas honestly — say it 'populates from AI queries' without triggering one live."
+      },
+      {
+        title: "Reports",
+        navigate: "/finance/reports — then click 'View Report' on any of the 7 cards",
+        show: [
+          "<strong>7 report cards:</strong> <strong>P&L Statement</strong> · <strong>Balance Sheet</strong> · <strong>Cash Flow Statement</strong> · <strong>Trial Balance</strong> · <strong>General Ledger</strong> · <strong>Accounts Receivable</strong> · <strong>Accounts Payable</strong>.",
+          "Each card has a description and an orange <strong>'View Report'</strong> button — all 7 link to dedicated formatted report pages.",
+          "<strong>P&L Statement:</strong> Total Income <strong>₹0.00</strong> · Total Expense <strong>-17.67</strong> · Net Profit <strong>17.67</strong> · Quarterly table (Jan–Mar 26 only quarter with data).",
+          "<strong>General Ledger — the richest report:</strong> Period Debit <strong>₹3,58,10,923.49</strong> · Period Credit <strong>₹3,58,10,923.49</strong> · Total Entries <strong>500</strong> · voucher series MAT-PRE-2026-01291 through 01795, all dated <strong>4 Feb 2026</strong>.",
+          "Every report has a <strong>'Download PDF'</strong> button and a <strong>fiscal year switcher</strong>. FY 2025-26 is the only year with data.",
+          "Footer: <strong>'Pixeldust India Operations · Confidential · Page 1 of 1'</strong>."
+        ],
+        say: "The Reports page is the library of formal financial statements — every document a CFO, auditor, or board member would ask for is one click away. The seven report types cover everything from the Profit and Loss Statement through to the full General Ledger. When you click View Report, you get a properly formatted, branded document — letterhead, issue date, fiscal year, currency — that is also downloadable as a PDF in one click. The General Ledger is the most data-rich of the seven: it shows five hundred individual journal entries with a total movement of three crore fifty-eight lakh rupees in both debit and credit, giving you a fully balanced ledger you can present with confidence. Each report also has a year filter, so switching between financial years takes one dropdown change.",
+        tip: "WOW MOMENT: Open the General Ledger — the 'Total Entries: 500' badge and the '3,58,10,923.49' balanced debit/credit figures are the most impressive concrete numbers in the entire Finance module. Click 'Download PDF' and pause — the instant generation lands even if you don't actually save the file. Don't zoom in on the P&L's 'Profit for the year: 17.67' rounding quirk — navigate away before anyone fixates."
+      },
+      {
+        title: "Bank Recon",
+        navigate: "/finance/reconciliation — Sidebar → Bank Recon",
+        show: [
+          "Title: <strong>'Bank Reconciliation'</strong> · subtitle: <strong>'AI-powered reconciliation — match bank transactions against internal ledger entries automatically.'</strong>",
+          "<strong>Run Reconciliation form:</strong> Company (Pixeldust India Operations pre-selected) · Bank Account (dropdown) · Period Start <strong>2026-04-30</strong> · Period End <strong>2026-05-30</strong>.",
+          "Bank Account dropdown is <strong>empty for this entity</strong> — accounts not yet linked in setup.",
+          "<strong>'Start Reconciliation'</strong> CTA — disabled until a bank account is selected.",
+          "Subtitle leads with <strong>'AI-powered'</strong> — signals the matching engine is automated, not manual."
+        ],
+        say: "Bank Reconciliation is where the system automatically matches transactions from your bank statement against entries in the ledger — an AI-powered sweep that typically takes a finance team several days to do manually. The interface is intentionally minimal: pick the company, the bank account, set your date range, and hit Start Reconciliation. The result would normally show you a matched-items list, any discrepancies, and an overall reconciliation status. Today the bank account selector is empty for this entity, which means the accounts haven't been linked in setup yet, but the workflow itself is clearly designed for a one-click reconciliation run.",
+        tip: "Acknowledge the empty bank account dropdown — say 'the bank account connection is configured during initial setup.' Don't attempt to run the reconciliation. This page's value is in describing the AI-matching workflow, not a live run. Keep this section brief — 60 seconds maximum."
+      },
+      {
+        title: "GST Recon",
+        navigate: "/finance/gst-recon — Sidebar → GST Recon",
+        show: [
+          "Title: <strong>'GST Reconciliation — GSTR-2B (Purchases)'</strong> · subtitle: <strong>'Match Purchase Invoices against GSTR-2B portal data to verify Input Tax Credit.'</strong>",
+          "<strong>Run GST Reconciliation form:</strong> Company · Type · Return Period (month picker) · <strong>Portal Data File upload</strong>.",
+          "Designed for <strong>ITC (Input Tax Credit) verification</strong> — a distinctly Indian GST compliance workflow.",
+          "File upload expects a <strong>GSTR-2B download</strong> from the government GST portal — user brings their own data.",
+          "Orange <strong>'Start'</strong> CTA awaits file upload."
+        ],
+        say: "GST Reconciliation addresses one of the most time-consuming compliance tasks for Indian businesses: matching your purchase invoices against the GSTR-2B data from the government portal to confirm your Input Tax Credit claims are valid. The workflow is straightforward — select your company, pick the return period, upload your GSTR-2B file from the portal, and start the reconciliation. The system then cross-checks every purchase invoice line against the portal data and flags any mismatches. For finance teams that do this manually in spreadsheets today, this can reduce a multi-day exercise to minutes.",
+        tip: "This page needs a GSTR-2B file to demonstrate live results. Frame it as a workflow demo: walk through the form fields and explain the matching, then say 'in practice you'd upload the GSTR-2B export here and the system would do the matching automatically.' Don't try to run the empty form. If the audience is non-Indian, briefly explain ITC before showing this page."
+      },
+      {
+        title: "Vendor Recon",
+        navigate: "/finance/vendor-recon — Sidebar → Vendor Recon",
+        show: [
+          "Title: <strong>'Vendor Reconciliation — Invoices'</strong> · subtitle: <strong>'Match Purchase Invoices (ERPNext) against vendor statement invoice lines using three matching sweeps.'</strong>",
+          "<strong>6-field form:</strong> Company (Pixeldust India Operations) · Flow (Invoices) · Period (Last X) · Statement Date · Vendor (optional — all vendors or single supplier) · <strong>Vendor Statements File</strong> (expected: <strong>vendor_recon_datasets.xlsx</strong>).",
+          "<strong>Three matching sweeps:</strong> exact match → fuzzy match → manual review queue — sequential AI passes.",
+          "Vendor filter is optional — run across all vendors or scope to one supplier.",
+          "Orange <strong>'Start Vendor Reconciliation'</strong> button awaits the Excel upload."
+        ],
+        say: "Vendor Reconciliation solves the classic AP headache: your records say you owe a supplier one amount, their statement says another, and your team spends days reconciling the difference in spreadsheets. Here you upload the vendor's own Excel statement, the system runs three matching sweeps — exact match first, then progressively looser matching — and surfaces only the discrepancies that need a human eye. You can run it across all vendors at once or focus on a single supplier. The expected file format is clearly labelled in the UI, and the period and vendor filters give the finance team precise control over scope.",
+        tip: "Most fully designed of the three reconciliation tools — call out the 'three matching sweeps' language in the subtitle, it shows algorithmic depth. To demo a live result, prepare a sample vendor_recon_datasets.xlsx beforehand — the expected filename is shown in the UI as a clue. Don't run the form empty."
+      },
+      {
+        title: "Nova AI — Finance Assistant",
+        navigate: "Orange chat button (bottom-right of any Finance page) — auto-opens on the Visualizer",
+        show: [
+          "Greeting: <strong>'Hi! I'm Nova AI — I can help you analyze financial data, trends, and insights.'</strong>",
+          "Chat input supports <strong>file attachment</strong> (Attach bill or receipt) — suggests AI parsing of expenses and invoices.",
+          "The <strong>Visualizer page</strong> is the intended home for AI chart generation — canvas on the left renders charts from AI responses.",
+          "<strong>AI query engine non-functional in current environment</strong> — do not trigger any prebuilt or typed question on stage."
+        ],
+        say: "The Nova AI Financial Assistant is the chat panel that sits alongside every Finance page, designed to let you ask plain-English questions about your financial data and get instant answers or rendered charts. The interface is well-designed — there is even a receipt upload button, suggesting the AI is intended to parse bills and expenses automatically. In a fully working state, this is clearly the most powerful part of the Finance module. In our testing today, the AI query engine is not connected to the financial data in this environment. The visual design and the workflow it represents are compelling — the live data capability needs to be verified before going on stage.",
+        tip: "AVOID ALL AI QUESTIONS — every query returns an error. Open the chat panel briefly to show it exists, describe the intended workflow verbally ('you can ask Nova AI to surface spend trends or compare quarters'), then DO NOT trigger any question. Pivot immediately to Reports for live data. If pressed, say 'the AI is connected to live ledger data — let me show you the same insight via the General Ledger directly.'"
+      }
+    ]
   },
 
   // -------- 2. INVENTORY --------
