@@ -674,48 +674,57 @@ const MODULES = [
     intro: {
       eyebrow: "Live demo · presenter view",
       headline: 'Nova Finance<em>.</em><br/>The financial command centre tour.',
-      lede: "Seven stops. Roughly 10–14 minutes. Killer moments: the cash-flow V-curve on the Dashboard (step 1) and the General Ledger's 500-entry balanced report (step 3). <strong>Critical setup before you start:</strong> set Company to 'Pixeldust US' and Period to 'FY 2025-26' — every other combination is empty. Nova AI is non-functional in the current environment, so the AI pages (steps 2 and 7) are described, not demonstrated."
+      lede: "Seven stops. Roughly 10–14 minutes. Killer moments: the live AI-rendered chart on the Visualizer (step 2) and the General Ledger's 500-entry branded PDF on Reports (step 3). <strong>Critical setup before you start:</strong> set Company to 'Pixeldust Technologies Pvt Ltd' and Period to '2025-2026' — every other combination is empty. Nova AI takes up to 3 minutes per query: click once and narrate while it loads."
     },
     demo: [
       {
         title: "Dashboard",
-        navigate: "/finance/dashboard — set company to Pixeldust US, period FY 2025-26",
+        navigate: "/finance/dashboard — set Company = Pixeldust Technologies Pvt Ltd, Period = 2025-2026",
         show: [
-          "<strong>Critical demo settings:</strong> Company = <strong>Pixeldust US</strong> · Period = <strong>FY 2025-26</strong> — all other company/year combos return empty dashboards.",
-          "<strong>5 KPI cards:</strong> Total Revenue <strong>₹0</strong> · Net Profit <strong>₹18</strong> · Total Expenses <strong>₹18</strong> · Cash Balance <strong>-₹10.08 Cr</strong> · Receivables <strong>—</strong>.",
-          "<strong>P&L Summary</strong> panel: Total Income <strong>₹0</strong> · Indirect Expenses <strong>-₹18</strong> · Net Profit <strong>₹18</strong> (rounding artefact).",
-          "<strong>Cash Flow chart</strong> (Net Change in Cash, Monthly): dramatic V-shaped dip reaching <strong>-8.0Cr</strong> around Dec 2025–Feb 2026, then recovering — spans Jun 2025 to Mar 2026.",
-          "<strong>Receivables vs Payables</strong> bar chart: AR = <strong>—</strong> · AP = <strong>₹2.64L</strong> entirely in the 91–120 day ageing bucket — every payable is overdue.",
-          "<strong>Recent Transactions</strong> (all 5 Feb 2026): ACC-PINV-2026-02433 Stonebridge Office Mart <strong>-₹90,514</strong> · 02432 Prime Facility Maintenance <strong>-₹1.66L</strong> · 02431 Apex Aluminium Suppliers <strong>-₹3.43L</strong>."
+          "<strong>Setup:</strong> Company <strong>Pixeldust Technologies Pvt Ltd</strong>, Period <strong>2025-2026</strong>.",
+          "<strong>Header:</strong> Company switcher · Period switcher · Refresh · <strong>Customize</strong> (user-configurable KPIs).",
+          "<strong>5 KPI cards:</strong> Revenue · Net Profit · Total Expenses · Cash Balance · Receivables.",
+          "<strong>P&L Summary:</strong> Income / Direct Expenses / Indirect Expenses / Net Profit.",
+          "<strong>Cash Flow chart:</strong> quarterly 'Net Change in Cash' across the fiscal year.",
+          "<strong>Receivables vs Payables:</strong> AR/AP totals plus aging bars (<strong>31-60</strong>, <strong>61-90</strong>, <strong>91-120</strong>, <strong>121-Above</strong>).",
+          "<strong>Recent Transactions:</strong> latest 6 GL entries (voucher, party, date, amount).",
+          "All panels live and drillable on one screen."
         ],
-        say: "The Finance Dashboard is the command centre for Pixeldust US Operations across the full financial year 2025 to 2026. The headline number that jumps out is a cash balance of negative $1.21 million — and the cash flow chart makes the story vivid: cash was essentially flat from June through December 2025, then dropped sharply between December and February, hitting a trough of close to -$950K, before beginning a partial recovery into March 2026. Scroll down and the Receivables versus Payables chart tells you something equally important: there are no outstanding customer receivables (AR stands at nil), while all ₹68,514 of outstanding vendor bills are overdue by 91 to 120 days — that is a real operational signal, not a placeholder. The recent transactions panel shows the six most recent sales invoices so a finance manager can see exactly what's been posted without running a report.",
-        tip: "CRITICAL SETUP: Before demo, set company to 'Pixeldust US' and year to 'FY 2025-26'. Every other combination shows blank dashboards. WOW MOMENT: Point to the Cash Flow chart's deep V-shape and say 'this is the kind of early warning a monthly PDF report would never catch in time.' Don't linger on the Revenue = ₹0 or Net Profit = ₹18 rounding quirk — acknowledge as data entry characteristic and move on."
+        say: "The Finance Dashboard is what a CXO opens on Monday morning. Five KPI cards at the top give an at-a-glance health check (revenue, profit, expenses, cash, receivables), and the company and period switchers in the top right mean a CFO running multiple legal entities or a board member reviewing prior-year comparisons can re-scope the entire dashboard in two clicks. The Customize control lets each user pin the KPIs that matter to their role. Below the KPIs, the P&L Summary mirrors a board pack, the Cash Flow chart turns quarter-on-quarter movement into a visual trend, and the Receivables vs Payables aging chart surfaces collection and payment risk by bucket, so a CXO can spot a working-capital problem in seconds rather than after a month-end review. The Recent Transactions panel closes the loop by showing the most recent six ledger entries with party names and amounts, so the dashboard isn't just rolled-up metrics; it's drillable evidence.",
+        tip: "CRITICAL SETUP: Company 'Pixeldust Technologies Pvt Ltd', Period '2025-2026'. WOW MOMENT: Toggle the period dropdown from '2025-2026' to '2024-2025' and back, then call out 'every chart on this page just re-scoped: that's a board-pack regeneration that used to take finance teams two days.' Then point at the AR/AP aging bars and say 'this is the kind of working-capital signal a monthly PDF would never give a CFO in time.' Don't get drawn into discussing specific revenue or profit figures; the story is the dashboard, not the company."
       },
       {
         title: "Visualizer",
-        navigate: "/finance/visualizer — Nova AI panel opens automatically alongside the canvas",
+        navigate: "/finance/visualizer — click any 'Try Asking' prompt in the chat panel · allow up to 3 minutes per query",
         show: [
-          "<strong>Split-screen layout:</strong> left canvas labelled <strong>'Your insights will appear here'</strong>; right panel is the Nova AI chat.",
-          "Greeting on right: <strong>'Hi! I'm Nova AI — I can help you analyze financial data, trends, and insights.'</strong>",
-          "Canvas is designed to <strong>render live charts</strong> from AI responses — when working, insights appear as interactive visualisations on the left.",
-          "<strong>AI engine non-functional in current environment</strong> — do not trigger any prebuilt button or typed query during the demo."
+          "<strong>Layout:</strong> canvas (left), Nova AI chat (right).",
+          "<strong>Canvas chips (4):</strong> <strong>Revenue vs Expenses</strong> · <strong>Expense Categories</strong> · <strong>Cash Flow</strong> · <strong>P&L Summary</strong>.",
+          "<strong>'Try Asking' prompts (3):</strong> <strong>Revenue vs expenses FY 2025-2026</strong> · <strong>Top 5 expense categories FY 2025-2026</strong> · <strong>Cash flow analysis FY 2025-2026</strong>.",
+          "Chat input: <strong>paperclip</strong> (bills/receipts) and <strong>history button</strong> (re-run prior queries).",
+          "On the revenue prompt: <strong>monthly grouped bar chart</strong> plus AI summary citing live P&L numbers (first paint ~60s, full response ~90s).",
+          "<strong>Download</strong> button (PNG export) on every rendered chart.",
+          "Follow-up prompt chips appear above the input after each response.",
+          "<strong>Latency:</strong> up to 3 min/query; single click only or the request requeues."
         ],
-        say: "The Visualizer is the most aspirational page in the Finance module — the idea is that you ask Nova AI a financial question in the chat panel on the right, and a live chart renders on the canvas on the left. The page itself is beautifully designed: a working canvas paired with a context-aware chat assistant. In a fully functional demo this is where you would ask for cash flow by month or a quarterly P&L summary and watch a chart appear in real time. Today the AI engine is returning errors for every query, so treat this page as a showcase of the interface concept rather than a live demonstration.",
-        tip: "DO NOT click anything on this page — every prebuilt button and typed query returns an error. Describe the intended flow verbally, gesture at the canvas placeholder, then pivot to the Reports page for real financial data. Acknowledge the empty canvas honestly — say it 'populates from AI queries' without triggering one live."
+        say: "The Visualizer is where Nova AI replaces the analyst layer. Instead of asking the finance team to build a chart, a CXO types a plain-English question in the chat panel on the right (or clicks one of the suggested prompts), and the canvas on the left renders a real chart pulled from live ledger data, with a written summary that explains what the chart is showing. Critically, the numbers the AI cites tie back exactly to the P&L Statement in the Reports section, so this isn't a separate analytics layer guessing at the data; it's the same source of truth presented differently. The paperclip icon lets a user attach a bill or receipt for parsing, and after every response the assistant suggests follow-up questions, so a CFO can keep drilling without having to know the right query language. Each chart has a Download button for board packs.",
+        tip: "PACING NOTE: First chart paints in about a minute and the full text response lands inside 90 seconds, but allow up to 3 minutes. Click the prompt once, narrate steps 03 to 06 while it renders, then come back to the canvas. WOW MOMENT: When the chart appears, point at the AI summary and say 'a finance analyst would take half a day to build this; the AI did it from a single click against live ledger data.' Then click a suggested follow-up chip to show the conversation continuing."
       },
       {
         title: "Reports",
-        navigate: "/finance/reports — then click 'View Report' on any of the 7 cards",
+        navigate: "/finance/reports — then click 'View Report' on any of the 7 cards (allow up to 60 seconds for large reports to render)",
         show: [
           "<strong>7 report cards:</strong> <strong>P&L Statement</strong> · <strong>Balance Sheet</strong> · <strong>Cash Flow Statement</strong> · <strong>Trial Balance</strong> · <strong>General Ledger</strong> · <strong>Accounts Receivable</strong> · <strong>Accounts Payable</strong>.",
-          "Each card has a description and an orange <strong>'View Report'</strong> button — all 7 link to dedicated formatted report pages.",
-          "<strong>P&L Statement:</strong> Total Income <strong>₹0.00</strong> · Total Expense <strong>-17.67</strong> · Net Profit <strong>17.67</strong> · Quarterly table (Jan–Mar 26 only quarter with data).",
-          "<strong>General Ledger — the richest report:</strong> Period Debit <strong>₹3,58,10,923.49</strong> · Period Credit <strong>₹3,58,10,923.49</strong> · Total Entries <strong>500</strong> · voucher series MAT-PRE-2026-01291 through 01795, all dated <strong>4 Feb 2026</strong>.",
-          "Every report has a <strong>'Download PDF'</strong> button and a <strong>fiscal year switcher</strong>. FY 2025-26 is the only year with data.",
-          "Footer: <strong>'Pixeldust India Operations · Confidential · Page 1 of 1'</strong>."
+          "Each card: short description plus orange <strong>'View Report'</strong> button.",
+          "Every report: <strong>branded letterhead</strong> · issue date · fiscal year · currency · entity footer.",
+          "Top-right of each: <strong>fiscal year switcher</strong> (<strong>2026-27</strong> / <strong>2025-26</strong> / <strong>2024-25</strong>) plus orange <strong>'Download PDF'</strong>.",
+          "<strong>P&L Statement:</strong> headline KPIs (Income / Expense / Net), account-level expense breakdown, quarterly activity table.",
+          "<strong>General Ledger:</strong> 4-card header (<strong>Loaded Debit</strong>, <strong>Loaded Credit</strong>, <strong>Net Closing Balance</strong>, <strong>Entries Loaded: 500</strong>) plus full journal table.",
+          "<strong>GL voucher mix:</strong> 5 prefixes (<strong>TDSPAY</strong>, <strong>TDSRECV</strong>, <strong>TDSCHAL</strong>, <strong>ACC-PAY-2026</strong>, <strong>HR-EXP-2026</strong>) spanning tax, AP, HR.",
+          "Note under GL totals: <strong>'Showing latest 500 entries. For full ledger history use Frappe ERP.'</strong>",
+          "Footer: <strong>'Pixeldust Technologies Pvt Ltd · Confidential · Page 1 of 1'</strong>."
         ],
-        say: "The Reports page is the library of formal financial statements — every document a CFO, auditor, or board member would ask for is one click away. The seven report types cover everything from the Profit and Loss Statement through to the full General Ledger. When you click View Report, you get a properly formatted, branded document — letterhead, issue date, fiscal year, currency — that is also downloadable as a PDF in one click. The General Ledger is the most data-rich of the seven: it shows five hundred individual journal entries with a total movement of three crore fifty-eight lakh rupees in both debit and credit, giving you a fully balanced ledger you can present with confidence. Each report also has a year filter, so switching between financial years takes one dropdown change.",
-        tip: "WOW MOMENT: Open the General Ledger — the 'Total Entries: 500' badge and the '3,58,10,923.49' balanced debit/credit figures are the most impressive concrete numbers in the entire Finance module. Click 'Download PDF' and pause — the instant generation lands even if you don't actually save the file. Don't zoom in on the P&L's 'Profit for the year: 17.67' rounding quirk — navigate away before anyone fixates."
+        say: "The Reports page is the formal-document library. Every report a CFO, auditor, or board member would ask for (P&L, Balance Sheet, Cash Flow Statement, Trial Balance, General Ledger, AR, AP) is one click away. Clicking View Report doesn't open a CSV or a spreadsheet; it opens a properly formatted, branded document with letterhead, issue date, fiscal year and currency in the header, and a 'Confidential · Page X of Y' footer, meaning the same screen a CXO reviews internally is the document that goes out to an auditor or board. The fiscal year switcher in the top right makes prior-year comparisons one click. The Download PDF button on every report generates the document instantly, so there's no 'let me get back to you after I export it.' The General Ledger is the proof-of-depth report: a 4-card header summarising debit, credit, closing balance and entry count, followed by the full journal table, showing this isn't a dashboard mock-up on top of an empty database; it's running against a real ledger with hundreds of live entries across tax, AP, and HR vouchers.",
+        tip: "WOW MOMENT: Open the General Ledger and let the 'Entries Loaded: 500' card and the balanced debit/credit pair land, then click 'Download PDF' and pause for the instant generation. Say 'a CFO who needs to hand this to an auditor at 5pm on a Friday: that's the whole workflow, end to end.' If anyone asks about the small closing balance, frame it as a live unposted entry, proof the ledger is active, not static demo data."
       },
       {
         title: "Bank Recon",
